@@ -1,0 +1,93 @@
+<nav aria-label="Page navigation example" class="mt-4">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link text-light bg-dark" href="/prev">Anterior</a>
+    </li>
+
+    <% if (currentId === 1) { %>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/3">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/4">4</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/5">5</a>
+      </li>
+    <% } else if (currentId === 88) { %>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/84">84</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/85">85</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/86">86</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/87">87</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/88">88</a>
+      </li>
+    <% } else if (currentId === 87) { %>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/84">84</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/85">85</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/86">86</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/87">87</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/88">88</a>
+      </li>
+    <% } else if (currentId === 2) { %>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/1">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/2">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/3">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/4">4</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/5">5</a>
+      </li>
+    <% } else if (currentId >= 3 && currentId <= 86) { %>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/<%= currentId - 2 %>"><%= currentId - 2 %></a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/<%= currentId - 1 %>"><%= currentId - 1 %></a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/<%= currentId %>"><%= currentId %></a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/<%= currentId + 1 %>"><%= currentId + 1 %></a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-light bg-dark" href="/character/<%= currentId + 2 %>"><%= currentId + 2 %></a>
+      </li>
+    <% } %>
+
+    <li class="page-item">
+      <a class="page-link text-light bg-dark" href="/next">Siguiente</a>
+    </li>
+  </ul>
+</nav>

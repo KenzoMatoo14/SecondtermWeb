@@ -1,0 +1,60 @@
+<div class="card-body">
+  <% if (character) { %>
+    <h4><%= character.name %></h4>
+    <p><strong>Especie:</strong> <%= character.species %></p>
+    <p><strong>Género:</strong> <%= character.gender %></p>
+    <p><strong>Altura:</strong> <%= character.height %> cm</p>
+    <p><strong>Peso:</strong> <%= character.mass %> kg</p>
+    <p><strong>Mundo de origen:</strong> <%= character.homeworld %></p>
+
+    <!-- Mostrar alineaciones solo si hay datos -->
+    <% if (character.affiliations && character.affiliations.length > 0) { %>
+      <p><strong>Alineaciones:</strong> <%= character.affiliations.join(', ') %></p>
+    <% } %>
+
+    <!-- Mostrar former affiliations solo si hay datos -->
+    <% if (character.formerAffiliations && character.formerAffiliations.length > 0) { %>
+      <p><strong>Alineaciones Anteriores:</strong> <%= character.formerAffiliations.join(', ') %></p>
+    <% } %>
+
+    <!-- Agregar Manufacturer y Model si es un droid -->
+    <% if (character.species === 'droid') { %>
+      <p><strong>Manufacturer:</strong> <%= character.manufacturer || 'No disponible' %></p>
+      <p><strong>Model:</strong> <%= character.model || 'No disponible' %></p>
+    <% } %>
+
+    <!-- Manejar masters y apprentices -->
+    <% 
+      const masters = Array.isArray(character.masters) ? character.masters : (character.masters ? [character.masters] : []);
+      const apprentices = Array.isArray(character.apprentices) ? character.apprentices : (character.apprentices ? [character.apprentices] : []);
+    %>
+
+    <!-- Mostrar masters solo si hay datos -->
+    <% if (masters.length > 0) { %>
+      <p><strong>Maestros:</strong> <%= masters.join(', ') %></p>
+    <% } %>
+
+    <!-- Mostrar apprentices solo si hay datos -->
+    <% if (apprentices.length > 0) { %>
+      <p><strong>Aprendices:</strong> <%= apprentices.join(', ') %></p>
+    <% } %>
+
+    <!-- Mostrar enlace a la wiki si existe -->
+    <% if (character.wiki) { %>
+      <p><strong>Wiki:</strong> <a href="<%= character.wiki %>" target="_blank">Ver más</a></p>
+    <% } %>
+
+    <!-- Mostrar cybernetics si existe -->
+    <% if (character.cybernetics) { %>
+      <p><strong>Cybernetics:</strong> <%= character.cybernetics %></p>
+    <% } %>
+
+    <!-- Mostrar lugar de muerte si existe -->
+    <% if (character.diedLocation) { %>
+      <p><strong>Lugar de muerte:</strong> <%= character.diedLocation %></p>
+    <% } %>
+
+  <% } else { %>
+    <p>No se pudo cargar la información del personaje.</p>
+  <% } %>
+</div>
