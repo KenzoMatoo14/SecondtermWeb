@@ -1,20 +1,20 @@
 <div class="card-body">
   <% if (character) { %>
     <h4><%= character.name %></h4>
-    <p><strong>Especie:</strong> <%= character.species %></p>
-    <p><strong>Género:</strong> <%= character.gender %></p>
-    <p><strong>Altura:</strong> <%= character.height %> cm</p>
-    <p><strong>Peso:</strong> <%= character.mass %> kg</p>
-    <p><strong>Mundo de origen:</strong> <%= character.homeworld %></p>
+    <p><strong>Species:</strong> <%= character.species %></p>
+    <p><strong>Gender:</strong> <%= character.gender %></p>
+    <p><strong>Height:</strong> <%= character.height %> m</p>
+    <p><strong>Weight:</strong> <%= character.mass %> kg</p>
+    <p><strong>Homeworld:</strong> <%= character.homeworld %></p>
 
     <!-- Mostrar alineaciones solo si hay datos -->
     <% if (character.affiliations && character.affiliations.length > 0) { %>
-      <p><strong>Alineaciones:</strong> <%= character.affiliations.join(', ') %></p>
+      <p><strong>Affiliations:</strong> <%= character.affiliations.join(', ') %></p>
     <% } %>
 
     <!-- Mostrar former affiliations solo si hay datos -->
     <% if (character.formerAffiliations && character.formerAffiliations.length > 0) { %>
-      <p><strong>Alineaciones Anteriores:</strong> <%= character.formerAffiliations.join(', ') %></p>
+      <p><strong>Former Affiliations:</strong> <%= character.formerAffiliations.join(', ') %></p>
     <% } %>
 
     <!-- Agregar Manufacturer y Model si es un droid -->
@@ -31,12 +31,12 @@
 
     <!-- Mostrar masters solo si hay datos -->
     <% if (masters.length > 0) { %>
-      <p><strong>Maestros:</strong> <%= masters.join(', ') %></p>
+      <p><strong>Masters:</strong> <%= masters.join(', ') %></p>
     <% } %>
 
     <!-- Mostrar apprentices solo si hay datos -->
     <% if (apprentices.length > 0) { %>
-      <p><strong>Aprendices:</strong> <%= apprentices.join(', ') %></p>
+      <p><strong>Apprentices:</strong> <%= apprentices.join(', ') %></p>
     <% } %>
 
     <!-- Mostrar enlace a la wiki si existe -->
@@ -51,7 +51,7 @@
 
     <!-- Mostrar lugar de muerte si existe -->
     <% if (character.diedLocation) { %>
-      <p><strong>Lugar de muerte:</strong> <%= character.diedLocation %></p>
+      <p><strong>Died Location:</strong> <%= character.diedLocation %></p>
     <% } %>
 
   <% } else { %>
